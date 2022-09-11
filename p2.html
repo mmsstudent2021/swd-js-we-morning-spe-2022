@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="./node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="./node_modules/animate.css/animate.min.css">
+</head>
+<body>
+<div class="p-3">
+
+    <h4>List Builder</h4>
+
+    <div action="" class="mb-3" id="inputForm">
+        <div class="input-group">
+            <input type="text" class="form-control" id="input" required>
+            <button class="btn btn-primary">
+                <i class="bi bi-plus-circle"></i>
+            </button>
+        </div>
+    </div>
+
+    <ul class="list-group" id="lists">
+
+    </ul>
+</div>
+
+<script>
+
+    //this
+    // arrow function
+    // event advance
+
+    //selector
+    let inputForm = document.getElementById("inputForm");
+    let input = document.getElementById("input");
+    let lists = document.getElementById("lists");
+
+
+    lists.addEventListener('click',function (e){
+
+        if(e.target.classList.contains('del-btn')){
+            console.dir(e.target.parentElement)
+            let current = e.target.parentElement;
+            current.classList.replace("animate__fadeInDown","animate__fadeOutRight")
+            current.addEventListener("animationend",function (){
+                current.remove()
+            })
+        }
+        // let delButtons = document.querySelectorAll(".del-btn");
+        // delButtons.forEach(function (delButton){
+        //     delButton.addEventListener('click',function (){
+        //         console.log(delButton)
+        //     })
+        // })
+        // console.log(delButtons)
+    })
+
+    //control
+    // inputForm.addEventListener('submit',function (e){
+    //     e.preventDefault()
+    //     console.log(input.value)
+    //     // lists.innerHTML += `
+    //     //     <li class="list-group-item animate__animated animate__fadeInDown d-flex justify-content-between">
+    //     //         <span>${input.value}</span>
+    //     //         <button class="btn btn-sm btn-outline-danger">Delete</button>
+    //     //     </li>
+    //     // `;
+    //
+    //     let li = document.createElement("li");
+    //     li.classList.add("list-group-item", "animate__animated", "animate__fadeInDown", "d-flex", "justify-content-between")
+    //     li.innerText = input.value
+    //     console.log(li);
+    //     lists.append(li)
+    //
+    //     // input.value = null
+    //
+    //     inputForm.reset()
+    //
+    // })
+
+    input.addEventListener("keyup",function (e){
+        // console.log(e)
+        if(e.key === "Enter"){
+            // console.log(input.value)
+            let li = document.createElement("li");
+            li.classList.add("list-group-item", "animate__animated", "animate__fadeInDown", "d-flex", "justify-content-between")
+            // li.innerText = input.value
+            li.innerHTML = `<span>${input.value}</span> <button class="btn btn-sm btn-outline-danger del-btn">Delete</button>`
+            // console.log(li);
+            lists.append(li)
+            input.value = null
+        }
+    })
+
+    //create element
+
+
+
+
+
+</script>
+
+</body>
+</html>

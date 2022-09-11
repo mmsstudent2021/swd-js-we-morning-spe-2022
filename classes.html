@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+
+//    // let me = {};
+//    // me.name = "hein htet zan";
+//    // me.age = 28;
+//    //
+//    // console.log(me)
+//
+//
+//    class Student {
+//
+//        // name,age;
+//
+//        run(){
+//            return "this is run";
+//        }
+//
+//        static subject = "Myanmar";
+//
+//        static go(){
+//            return "this is go";
+//        }
+//
+//        constructor(inputName,inputAge) {
+//            this.name = inputName;
+//            this.age = inputAge;
+//        }
+//
+//    }
+//
+//    let me = new Student("hhz",28);
+//    console.log(me);
+//    //
+//    let kk = new Student('kyaw kyaw',20);
+//
+//    console.log(kk);
+
+
+
+    class Tech{
+        software = "software";
+        hardware = "hardware";
+
+        canFixHardWareError(){
+            return "technician can solve hardware problems"
+        }
+    }
+
+    class Programmer extends Tech{
+      programming = "programming";
+    }
+
+    class Developer extends Programmer{
+
+    }
+
+    let t = new Tech;
+    console.log(t.hardware,t.software)
+
+    let p = new Programmer;
+    console.log(p.hardware,p.software)
+
+    let d = new Developer();
+    console.log(d.hardware,d.software,d.programming,d.canFixHardWareError())
+
+
+
+
+</script>
+</body>
+</html>

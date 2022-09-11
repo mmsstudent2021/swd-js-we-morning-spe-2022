@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body{
+            height: 3000px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Min ga lar par</h1>
+
+    <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod temporibus nesciunt excepturi possimus officia sed incidunt, dolore necessitatibus cumque quasi in autem nemo explicabo repudiandae quae ipsam odio voluptatum hic.
+    </p>
+
+    <ul>
+        <li>apple</li>
+        <li>ornage</li>
+        <li>mango</li>
+    </ul>
+
+
+    <form action="" id="myForm">
+        <input type="text" id="textInput" required>
+    
+        <select name="cars" id="cars">
+            <option value="volvo">Volvo</option>
+            <option value="saab">Saab</option>
+            <option value="mercedes">Mercedes</option>
+            <option value="audi">Audi</option>
+        </select>
+        
+        <button id="btn">Click Me</button>
+    </form>
+
+    <h1 id="output">Hello</h1>
+
+    <img width="150" src="https://1.bp.blogspot.com/-D1YioZXzMwU/YJwCoKaMcbI/AAAAAAAAM8Y/0HiwN4oZS94PKe_zjbAkeMl7KX_eFhV1QCLcBGAsYHQ/s640/117468414_990008734785212_10476682941901621_n.jpg" alt="">
+
+    <a href="https://google.com">google</a>
+    <a href="https://youtube.com">youtube</a>
+    <a href="https://mms-it.com">MMS IT</a>
+
+    <script>
+
+
+        
+
+        //select elements
+        let textInput = document.querySelector("#textInput");
+        // let btn = document.querySelector("#btn");
+        let output = document.querySelector("#output");
+        let cars = document.querySelector("#cars");
+        let myForm = document.querySelector("#myForm");
+        let a = document.querySelector("a");
+
+        a.addEventListener("click",function(e){
+            console.log(e)
+            e.preventDefault()
+        })
+
+        // console.dir(textInput)
+
+        // window.addEventListener('load',function(){
+        //     console.log("window loaded")
+        // })
+
+
+        // console.log("one")
+        // console.log("two")
+        // console.log("three")
+
+        
+        // document.addEventListener("mousemove",function(event){
+        //     console.log(event)
+        // })
+
+        // myForm.addEventListener("submit",function(e){
+        //     e.preventDefault()
+        //     console.log(e)
+        // })
+
+        // output.addEventListener("contextmenu",function(){
+        //     console.log("U click")
+        // })
+
+        // window.addEventListener("resize",function(){
+        //     console.log("U resize")
+        // })
+
+        // document.addEventListener("scroll",function(){
+        //     console.log("U scroll")
+        // })
+
+        // textInput.addEventListener("focus",function(){
+        //     console.log("U focus")
+        // })
+
+        // textInput.addEventListener("blur",function(){
+        //     console.log("U blur")
+        // })
+
+        // cars.addEventListener("change",function(){
+        //     console.log("U change",cars.value)
+        // })
+
+        // output.addEventListener("dblclick",function(){
+        //     console.log("U double click")
+        // })
+
+
+
+        // output.addEventListener("mouseover",function(){
+        //     console.log("U mouseover")
+        // })
+
+        // output.addEventListener("mouseleave",function(){
+        //     console.log("U mouseLeave")
+        // })
+
+
+        // console.dir(textInput)
+
+        // textInput.addEventListener("keyup",function(){
+        //     console.log(textInput.value)
+        // })
+
+        // textInput.addEventListener("keyup",function(){
+        //     let text = textInput.value;
+        //     output.innerText = text
+        // })
+
+        // btn.addEventListener("click",function(){
+        //     let text = textInput.value;
+        //     output.innerText = text
+        //     console.log(text);
+        //     textInput.value = null
+        // })
+
+    
+
+    </script>
+    
+</body>
+</html>

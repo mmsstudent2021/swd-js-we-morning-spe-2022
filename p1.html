@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="./node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <style>
+
+        @import url('https://fonts.googleapis.com/css2?family=Combo&family=Qwitcher+Grypen&family=Raleway&display=swap');
+        
+        .box{
+            height: 200px;
+            font-size: 15px;
+        }
+
+
+
+        /* .font-one{
+            font-family: 'Combo', cursive;
+            font-family: 'Qwitcher Grypen', cursive;
+            font-family: 'Raleway', sans-serif;
+        } */
+
+    </style>
+</head>
+<body>
+
+    <div class="p-3 border border-primary m-3 box"></div>
+    <div class="row m-3">
+        <div class="col-12">
+            <input type="text" class="form-control text-input mb-3" placeholder="Say Something">
+        </div>
+        <div class="col">
+            <input type="color" class="form-control color-input h-100">
+
+        </div>
+        <div class="col">
+            <select class="form-select font-input" name="" id="">
+                <option value="Combo">Combo</option>
+                <option value="Qwitcher Grypen">Qwitcher Grypen</option>
+                <option value="Raleway">Raleway</option>
+            </select>
+        </div>
+        <div class="col">
+            <div class="input-group size-input">
+                <button class="btn btn-outline-primary">
+                    <i class="bi bi-dash"></i>
+                </button>
+                <input type="number" class="form-control text-end">
+                <button class="btn btn-outline-primary">
+                    <i class="bi bi-plus"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+    <script>
+
+        let defaultFontSize = 15;
+        //selectors
+        let box = document.querySelector(".box");
+        let textInput = document.querySelector(".text-input");
+        let colorInput = document.querySelector(".color-input");
+        let fontInput = document.querySelector(".font-input");
+        let sizeInput = document.querySelector(".size-input");
+        // let box = document.querySelector(".box");
+
+
+        //setValue
+        sizeInput.children[1].valueAsNumber = defaultFontSize
+
+
+        //controls
+
+        window.addEventListener("load",function(){
+            textInput.value = "Min Ga Lar Par";
+            box.innerText = textInput.value;
+            box.style.fontSize = defaultFontSize;
+            box.style.fontFamily = fontInput.value
+        })
+
+        sizeInput.children[2].addEventListener("click",function(){
+            sizeInput.children[1].valueAsNumber += 3
+            box.style.fontSize = sizeInput.children[1].valueAsNumber+"px"
+
+        })
+
+        sizeInput.children[0].addEventListener("click",function(){
+            if(sizeInput.children[1].valueAsNumber > 0){
+                sizeInput.children[1].valueAsNumber -= 3
+                box.style.fontSize = sizeInput.children[1].valueAsNumber+"px"
+            }
+        })
+
+
+        textInput.addEventListener("keyup",function(){
+            console.log(textInput.value)
+            box.innerText = textInput.value
+        })
+
+        colorInput.addEventListener("change",function(){
+            box.style.color = colorInput.value
+        })
+
+        fontInput.addEventListener("change",function(){
+            console.log(fontInput.value)
+            box.style.fontFamily = fontInput.value
+        })
+
+
+
+    </script>
+</body>
+</html>
